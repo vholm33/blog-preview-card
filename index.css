@@ -1,0 +1,77 @@
+/* ===================================== */
+/* ---------- 1. Normalize ---------- */
+/* ===================================== */
+
+/* ===================================== */
+/* ---------- 2. Variables ---------- */
+/* ===================================== */
+
+/* ---------- 2.1 Primitive ---------- */
+:root {
+  /* 2.1.1 Typography */
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-xl: 1.5rem;
+
+  --fw-medium: 500;
+  --fw-xtrabold: 800;
+
+  --lh-normal: 1.5;
+
+  /* 2.1.2 Spacing */
+
+  --spacing-50: 0.25rem;
+  --spacing-100: 0.5rem;
+  --spacing-150: 0.75rem;
+  --spacing-200: 1rem;
+  --spacing-300: 2rem;
+
+  /* 2.1.3 Sizes */
+  /* 2.1.4 Colors */
+
+  --color-yellow: #f4d04e;
+  --gray-950: #111;
+  --gray-500: #6b6b6b;
+  --white: #fff;
+
+  /* 2.1.5 Borders */
+  --br-xs: 4px;
+  --br-lg: 20px;
+  --br-round: 50%;
+
+  /* 2.1.6 Shadows */
+
+  --shadow-lg-hard: 8px 8px rgba(0, 0, 0, 1);
+}
+/* ---------- 2.2 Semantic Mobile ---------- */
+
+/* ---------- 2.3 Semantic Desktop ---------- */
+@media (min-width: 48rem) {
+}
+/* ===================================== */
+/* ---------- 3. Globals ---------- */
+/* ===================================== */
+
+/* ---------- 3.1 Fonts ---------- */
+@font-face {
+  font-family: "Figtree";
+  font-weight: 500;
+  src: url(assets/fonts/Figtree-Medium.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-weight: 800;
+  src: url(assets/fonts/Figtree-ExtraBold.woff2) format(woff2);
+}
+
+/* ---------- 3.2 Styles ---------- */
+
+/* ===================================== */
+/* ---------- 4. Layout ---------- */
+/* ===================================== */
+
+/* ===================================== */
+/* ---------- 5. Components ---------- */
+/* ===================================== */
