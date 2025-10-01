@@ -2,6 +2,30 @@
 /* ---------- 1. Normalize ---------- */
 /* ===================================== */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100svh;
+}
+
 /* ===================================== */
 /* ---------- 2. Variables ---------- */
 /* ===================================== */
@@ -10,14 +34,14 @@
 :root {
   /* 2.1.1 Typography */
 
+  --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
+  --fs-lg: 1.25rem;
   --fs-xl: 1.5rem;
 
   --fw-medium: 500;
   --fw-xtrabold: 800;
-
-  --lh-normal: 1.5;
 
   /* 2.1.2 Spacing */
 
@@ -30,25 +54,72 @@
   /* 2.1.3 Sizes */
   /* 2.1.4 Colors */
 
-  --color-yellow: #f4d04e;
+  --yellow: #f4d04e;
   --gray-950: #111;
   --gray-500: #6b6b6b;
   --white: #fff;
 
+  --text-primary: var(--gray-950);
+  --text-secondary: var(--gray-500);
+
   /* 2.1.5 Borders */
-  --br-xs: 4px;
-  --br-lg: 20px;
+  --br-xs: 0.25rem;
+  --br-md: 0.625rem;
+  --br-lg: 1.25rem;
   --br-round: 50%;
 
   /* 2.1.6 Shadows */
 
-  --shadow-lg-hard: 8px 8px rgba(0, 0, 0, 1);
-}
-/* ---------- 2.2 Semantic Mobile ---------- */
+  --shadow-lg-hard: 0.5rem 0.5rem rgba(0, 0, 0, 1);
 
-/* ---------- 2.3 Semantic Desktop ---------- */
-@media (min-width: 48rem) {
+  /* ---------- 2.2 Semantic ---------- */
+
+  /* 2.1.1 Typography */
+
+  --fs-course-card-tag: clamp(var(--fs-xs), 0.706rem + 0.188vw, var(--fs-sm));
+  --fs-course-card-publish-date: clamp(var(--fs-xs), 0.706rem + 0.188vw, var(--fs-sm));
+  --fs-course-card-title: clamp(var(--fs-lg), 1.1619rem + 0.376vw, var(--fs-xl));
+  --fs-course-card-description: clamp(var(--fs-sm), calc(0.831rem + 0.188vw), var(--fs-base));
+  --fs-course-card-name: var(--fs-sm);
+
+  --fw-course-card-tag: var(--fw-xtrabold);
+  --fw-course-card-publish-date: var(--fw-medium);
+  --fw-course-card-title: var(--fw-xtrabold);
+  --fw-course-card-description: var(--fw-medium);
+  --fw-course-card-name: var(--fw-xtrabold);
+
+  /* 2.1.2 Spacing */
+  /* 2.1.3 Sizes */
+  /* 2.1.4 Colors */
+
+  --clr-course-card-tag: var(--text-primary);
+  --clr-course-card-publish-date: var(--text-primary);
+  --clr-course-card-title: var(--text-primary);
+  --clr-course-card-description: var(--text-secondary);
+  --clr-course-card-name: var(--text-primary);
+
+  --clr-course-card-title-hover: var(--yellow);
+
+  --surface-page: var(--yellow);
+  --surface-card: var(--white);
+
+  /* 2.1.5 Borders */
+  /* 2.1.6 Shadows */
+
+  @media (min-width: 48rem) {
+  /* ---------- 2.2 Semantic Desktop ---------- */
+
+    /* 2.2.1 Typography */
+    
+  --fw-course-card-tag: var(--fw-xtrabold);
+  --fw-course-card-publish-date: var(--fw-medium);
+  --fw-course-card-title: var(--fw-xtrabold);
+  --fw-course-card-description: var(--fw-xtrabold);
+  --fw-course-card-name: var(--fw-xtrabold);
+
+  }
 }
+
 /* ===================================== */
 /* ---------- 3. Globals ---------- */
 /* ===================================== */
@@ -66,12 +137,102 @@
   src: url(assets/fonts/Figtree-ExtraBold.woff2) format(woff2);
 }
 
+* {
+  font-family: "Figtree", sans-serif;
+}
+
 /* ---------- 3.2 Styles ---------- */
 
+body {
+  background-color: var(--surface-page);
+}
 /* ===================================== */
 /* ---------- 4. Layout ---------- */
 /* ===================================== */
 
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  padding-inline: 1.5rem;
+}
+
 /* ===================================== */
 /* ---------- 5. Components ---------- */
 /* ===================================== */
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  padding: var(--spacing-300);
+  width: clamp(20.25rem, 18.9312rem + 5.63vw, 24rem);
+  border-radius: var(--br-lg);
+  border: 0.0625rem solid var(--gray-950);
+  box-shadow: var(--shadow-lg-hard);
+  background-color: var(--surface-card);
+}
+
+.course-card__image {
+  border-radius: var(--br-md);
+}
+
+.course-card__body-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
+}
+
+.course-card__category {
+  width: max-content;
+  border-radius: var(--br-xs);
+  background-color: var(--yellow);
+  padding: 0.25rem 0.75rem;
+}
+
+.course-card__tag {
+  font-size: var(--fs-course-card-tag);
+  font-weight: var(--fw-course-card-tag);
+  color: var(--clr-course-card-tag);
+}
+
+.course-card__publish-date {
+  font-size: var(--fs-course-card-publish-date);
+  font-weight: var(--fw-course-card-publish-date);
+  color: var(--clr-course-card-publish-date);
+}
+
+.course-card__title {
+  font-size: var(--fs-course-card-title);
+  font-weight: var(--fw-course-card-title);
+  color: var(--clr-course-card-title);
+}
+
+.course-card__description {
+  font-size: var(--fs-course-card-description);
+  font-weight: var(--fw-course-card-description);
+  color: var(--clr-course-card-description);
+}
+
+.course-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-150);
+  flex-direction: row;
+}
+
+.course-card__avatar {
+  max-width: 2rem;
+}
+
+.course-card__name {
+  font-size: var(--fs-course-card-name);
+  font-weight: var(--fw-course-card-name);
+  color: var(--clr-course-card-name);
+}
+
+.course-card:hover .course-card__title {
+  color: var(--clr-course-card-title-hover)
+}

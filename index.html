@@ -1,47 +1,49 @@
-<k!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
 
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="./assets/images/favicon-32x32.png"
-      />
-
-      <title>Frontend Mentor | Blog preview card</title>
-    </head>
-    <body>
-      <main>
-        <div class="course-card">
-          <img
-            src="assets/images/illustration-article.svg"
-            alt="code illustration"
-            class="course-card__image"
-          />
-          <div class="course-card__body-wrapper">
+    <title>Frontend Mentor | Blog preview card</title>
+  </head>
+  <body>
+    <main>
+      <div class="course-card">
+        <img
+          src="assets/images/illustration-article.svg"
+          alt="code illustration"
+          class="course-card__image"
+        />
+        <div class="course-card__body-wrapper">
+          <div class="course-card__category">
             <p class="course-card__tag">Learning</p>
-            <ti me class="course-card__publish-date" datetime="2023-12-21"
-              >Published 21 Dec 2023</time
-            >
-            <h2 class="course-card__title">HTML & CSS foundations</h2>
-            <p class="course-card__description">
-              These languages are the backbone of every website, defining
-              structure, content, and presentation.
-            </p>
           </div>
-          <div class="course-card__author">
-            <img
-              src="assets/images/image-avatar.webp"
-              alt="greg hooper avatar"
-              class="course-card__avatar"
-            />
-            <cite class="course-card__name">Greg Hooper</cite>
-          </div>
+          <time class="course-card__publish-date" datetime="2023-12-21">
+            Published 21 Dec 2023
+          </time>
+          <h2 class="course-card__title">HTML & CSS foundations</h2>
+          <p class="course-card__description">
+            These languages are the backbone of every website, defining
+            structure, content, and presentation.
+          </p>
         </div>
-      </main>
-    </body>
-  </html>
-</k!DOCTYPE>
+        <div class="course-card__author">
+          <img
+            src="assets/images/image-avatar.webp"
+            alt="greg hooper avatar"
+            class="course-card__avatar"
+          />
+          <cite class="course-card__name">Greg Hooper</cite>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
