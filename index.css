@@ -77,9 +77,21 @@ body {
   /* 2.1.1 Typography */
 
   --fs-course-card-tag: clamp(var(--fs-xs), 0.706rem + 0.188vw, var(--fs-sm));
-  --fs-course-card-publish-date: clamp(var(--fs-xs), 0.706rem + 0.188vw, var(--fs-sm));
-  --fs-course-card-title: clamp(var(--fs-lg), 1.1619rem + 0.376vw, var(--fs-xl));
-  --fs-course-card-description: clamp(var(--fs-sm), calc(0.831rem + 0.188vw), var(--fs-base));
+  --fs-course-card-publish-date: clamp(
+    var(--fs-xs),
+    0.706rem + 0.188vw,
+    var(--fs-sm)
+  );
+  --fs-course-card-title: clamp(
+    var(--fs-lg),
+    1.1619rem + 0.376vw,
+    var(--fs-xl)
+  );
+  --fs-course-card-description: clamp(
+    var(--fs-sm),
+    calc(0.831rem + 0.188vw),
+    var(--fs-base)
+  );
   --fs-course-card-name: var(--fs-sm);
 
   --fw-course-card-tag: var(--fw-xtrabold);
@@ -107,16 +119,15 @@ body {
   /* 2.1.6 Shadows */
 
   @media (min-width: 48rem) {
-  /* ---------- 2.2 Semantic Desktop ---------- */
+    /* ---------- 2.2 Semantic Desktop ---------- */
 
     /* 2.2.1 Typography */
-    
-  --fw-course-card-tag: var(--fw-xtrabold);
-  --fw-course-card-publish-date: var(--fw-medium);
-  --fw-course-card-title: var(--fw-xtrabold);
-  --fw-course-card-description: var(--fw-xtrabold);
-  --fw-course-card-name: var(--fw-xtrabold);
 
+    --fw-course-card-tag: var(--fw-xtrabold);
+    --fw-course-card-publish-date: var(--fw-medium);
+    --fw-course-card-title: var(--fw-xtrabold);
+    --fw-course-card-description: var(--fw-xtrabold);
+    --fw-course-card-name: var(--fw-xtrabold);
   }
 }
 
@@ -234,5 +245,5 @@ main {
 }
 
 .course-card:hover .course-card__title {
-  color: var(--clr-course-card-title-hover)
+  color: var(--clr-course-card-title-hover);
 }
