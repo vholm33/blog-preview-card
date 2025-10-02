@@ -196,6 +196,12 @@ main {
   gap: var(--spacing-150);
 }
 
+.course-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
+}
+
 .course-card__category {
   width: max-content;
   border-radius: var(--br-xs);
